@@ -9,6 +9,9 @@ import { HelloService } from './hello.service';
         <br>
         <br>
         <button (click)="dispatchErrorhandler()"> Dispatch Error </button>
+        <br>
+        <br>
+        <button (click)="dispatchErrorCallbackHandler()"> Dispatch Error Callback </button>
     `,
     providers: [
         HelloService
@@ -31,5 +34,9 @@ export class HelloComponent  {
 
     dispatchErrorhandler() {
         this.helloService.execError();
+    }
+
+    dispatchErrorCallbackHandler() {
+        this.helloService.execErrorCallback();
     }
 }

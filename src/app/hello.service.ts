@@ -16,10 +16,14 @@ export class HelloService {
         param.add = 'added param';
         return param;
     }
+    
+    @CatchAll
+    execError() {
+        this.tempObj.exec();
+    }
 
     @Catch(Error, (error) => {alert('Error' + error.message)})
-    // @CatchAll
-    execError() {
+    execErrorCallback() {
         this.tempObj.exec();
     }
 }
