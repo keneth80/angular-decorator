@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { CatchAll } from './decorator/catch';
 import { Catch } from './decorator/catch';
 import { Logger } from './decorator/logger';
 
@@ -16,7 +17,8 @@ export class HelloService {
         return param;
     }
 
-    @Catch(Error, (error) => {alert('Error => ' + JSON.stringify(error))})
+    @Catch(Error, (error) => {alert('Error' + error.message)})
+    // @CatchAll
     execError() {
         this.tempObj.exec();
     }
