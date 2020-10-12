@@ -6,7 +6,6 @@ function handleError(
     handler: HandlerFunction, 
     error: any
 ) {
-    // check if error is instance of passed error class
     if (typeof handler === 'function' && error instanceof errorClass) {
         handler.call(null, error, ctx);
     } else {
@@ -14,7 +13,6 @@ function handleError(
     }
 }
 
-// decorator factory function
 export const Catch = (errorClass: any, handler: HandlerFunction): any => {
     return (
         target: any,
